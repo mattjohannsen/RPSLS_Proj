@@ -20,9 +20,10 @@ namespace RPSLS
         Outcome scissors = new Outcome("lose", "win", "tie", "win", "lose");
         Outcome lizzard = new Outcome("lose", "win", "lose", "tie", "win");
         Outcome spock = new Outcome("win", "lose", "win", "lose", "tie");
+            //outcomes.Add(rock)
 
         outcomes = new List<Outcome>() { rock, paper, scissors, lizzard, spock };
-        Console.WriteLine($"{outcomes}");
+        //Console.WriteLine($"{outcomes}");
     }
 
         // member variables
