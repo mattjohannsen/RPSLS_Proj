@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Outcome
+    public class Outcome
     {
-        bool outcome0;
-        bool outcome1;
-        bool outcome2;
-        bool outcome3;
-        bool outcome4;
+        string outcome0;
+        string outcome1;
+        string outcome2;
+        string outcome3;
+        string outcome4;
 
-        public Outcome(bool outcome0, bool outcome1, bool outcome2, bool outcome3, bool outcome4)
+        public Outcome(string outcome0, string outcome1, string outcome2, string outcome3, string outcome4)
         {
             this.outcome0 = outcome0;
             this.outcome1 = outcome1;

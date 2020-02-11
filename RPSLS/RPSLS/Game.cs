@@ -9,7 +9,7 @@ namespace RPSLS
     class Game
     {
         //member variables
-
+        Gesture theGestures;
 
 
         //constructor
