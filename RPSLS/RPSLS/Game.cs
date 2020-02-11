@@ -8,5 +8,28 @@ namespace RPSLS
 {
     class Game
     {
+        //member variables
+
+
+
+        //constructor
+        public Game()
+        {
+            
+        }
+
+
+        //methods
+
+        public void StartGame()
+        {
+
+            Console.WriteLine("RPSLS Game");
+            Console.ReadLine();
+        }
+
+
+
+
     }
 }
