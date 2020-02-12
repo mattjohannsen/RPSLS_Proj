@@ -35,12 +35,165 @@ namespace RPSLS
             Console.WriteLine($"Player 1 Chose: {player1.gesture}");
             player2.ChooseGesture();
             Console.WriteLine($"Player 2 Chose: {player2.gesture}");
+            CompareGestures();
             //Console.WriteLine($"p2: {player2.gesture}");
             //string numberPlayers = GetNumberOfPlayers();
 
 
         }
-
+        public void CompareGestures()
+        {
+            Console.WriteLine("Comparing gesture selections...");
+            Console.WriteLine($"{player1.gesture} vs. {player2.gesture}");
+            if ((player1.gesture == "rock") && (player2.gesture == "rock"))
+            {
+                Console.WriteLine("Tie! Select Again!");
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "rock") && (player2.gesture == "paper"))
+            {
+                Console.WriteLine("Player 2 Wins!");
+                player2.score ++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "rock") && (player2.gesture == "scissors"))
+            {
+                Console.WriteLine("Player 1 Wins!");
+                player1.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "rock") && (player2.gesture == "lizzard"))
+            {
+                Console.WriteLine("Player 1 Wins!");
+                player1.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "rock") && (player2.gesture == "spock"))
+            {
+                Console.WriteLine("Player 2 Wins!");
+                player2.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "paper") && (player2.gesture == "rock"))
+            {
+                Console.WriteLine("Player 1 Wins!");
+                player1.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "paper") && (player2.gesture == "paper"))
+            {
+                Console.WriteLine("Tie! Select Again!");
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "paper") && (player2.gesture == "scissors"))
+            {
+                Console.WriteLine("Player 2 Wins!");
+                player2.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "paper") && (player2.gesture == "lizzard"))
+            {
+                Console.WriteLine("Player 2 Wins!");
+                player2.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "paper") && (player1.gesture == "spock"))
+            {
+                Console.WriteLine("Player 1 Wins!");
+                player1.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "scissors") && (player2.gesture == "rock"))
+            {
+                Console.WriteLine("Player 2 Wins!");
+                player2.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "scissors") && (player2.gesture == "paper"))
+            {
+                Console.WriteLine("Player 1 Wins!");
+                player1.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "scissors") && (player2.gesture == "scissors"))
+            {
+                Console.WriteLine("Tie! Select Again!");
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "scissors") && (player2.gesture == "lizzard"))
+            {
+                Console.WriteLine("Player 1 Wins!");
+                player1.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "scissors") && (player2.gesture == "spock"))
+            {
+                Console.WriteLine("Player 2 Wins!");
+                player2.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "lizzard") && (player2.gesture == "rock"))
+            {
+                Console.WriteLine("Player 2 Wins!");
+                player2.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "lizzard") && (player2.gesture == "paper"))
+            {
+                Console.WriteLine("Player 1 Wins!");
+                player1.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "lizzard") && (player2.gesture == "scissors"))
+            {
+                Console.WriteLine("Player 2 Wins!");
+                player2.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "lizzard") && (player2.gesture == "lizzard"))
+            {
+                Console.WriteLine("Tie! Select Again!");
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "lizzard") && (player2.gesture == "spock"))
+            {
+                Console.WriteLine("Player 1 Wins!");
+                player1.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "spock") && (player2.gesture == "rock"))
+            {
+                Console.WriteLine("Player 1 Wins!");
+                player1.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "spock") && (player2.gesture == "paper"))
+            {
+                Console.WriteLine("Player 2 Wins!");
+                player2.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "spock") && (player2.gesture == "scissors"))
+            {
+                Console.WriteLine("Player 1 Wins!");
+                player1.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "spock") && (player2.gesture == "lizzard"))
+            {
+                Console.WriteLine("Player 2 Wins!");
+                player2.score++;
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+            if ((player1.gesture == "spock") && (player1.gesture == "spock"))
+            {
+                Console.WriteLine("Tie! Select Again!");
+                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            }
+        }
+        
+        
+        
         private string GetNumberOfPlayers()
         {
             bool isValidSelection = false;
