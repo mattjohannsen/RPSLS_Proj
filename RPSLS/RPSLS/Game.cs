@@ -31,7 +31,10 @@ namespace RPSLS
             Console.WriteLine("Rock Paper Scissors Lizzard Spock");
             string players = GetNumberOfPlayers();
             SetPlayers(players);
-
+            player1.ChooseGesture();
+            player2.ChooseGesture();
+            Console.WriteLine($"p1: {player1.gesture}");
+            //Console.WriteLine($"p2: {player2.gesture}");
             //string numberPlayers = GetNumberOfPlayers();
 
 
@@ -79,6 +82,8 @@ namespace RPSLS
             }
 
         }
+
+        
 
     }
 }
