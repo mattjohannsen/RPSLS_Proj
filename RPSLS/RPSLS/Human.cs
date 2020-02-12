@@ -26,31 +26,31 @@ namespace RPSLS
             do
             {
                 Console.WriteLine("Select Gesture:");
-                Console.WriteLine("(0) for Rock");
-                Console.WriteLine("(1) for Paper");
-                Console.WriteLine("(2) for Scissors");
-                Console.WriteLine("(3) for Lizzard");
-                Console.WriteLine("(4) for Spock");
+                Console.WriteLine("(1) for Rock");
+                Console.WriteLine("(2) for Paper");
+                Console.WriteLine("(3) for Scissors");
+                Console.WriteLine("(4) for Lizzard");
+                Console.WriteLine("(5) for Spock");
                 playerSelection = Console.ReadLine();
                 switch (playerSelection)
                 {
-                case "0":
+                case "1":
                     gesture = "rock";
                     validPlayerChoice = true;
                     break;
-                case "1":
+                case "2":
                     gesture = "paper";
                     validPlayerChoice = true;
                     break;
-                case "2":
+                case "3":
                      gesture = "scissors";
                     validPlayerChoice = true;
                     break;
-                case "3":
+                case "4":
                      gesture = "lizzard";
                     validPlayerChoice = true;
                     break;
-                case "4":
+                case "5":
                      gesture = "spock";
                     validPlayerChoice = true;
                     break;

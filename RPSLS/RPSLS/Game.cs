@@ -11,7 +11,7 @@ namespace RPSLS
         // member variables
         public Player player1;
         public Player player2;
-
+        bool continueGame = true;
         // This is where the List<string> gestures will go
 
 
@@ -31,20 +31,37 @@ namespace RPSLS
             Console.WriteLine("Rock Paper Scissors Lizzard Spock");
             string players = GetNumberOfPlayers();
             SetPlayers(players);
-            player1.ChooseGesture();
-            Console.WriteLine($"Player 1 Chose: {player1.gesture}");
-            player2.ChooseGesture();
-            Console.WriteLine($"Player 2 Chose: {player2.gesture}");
-            CompareGestures();
-            //Console.WriteLine($"p2: {player2.gesture}");
-            //string numberPlayers = GetNumberOfPlayers();
+            //bool continueGame = true;
+            do
+            {
+                player1.ChooseGesture();
+                Console.WriteLine($"Player 1 Chose: {player1.gesture}");
+                player2.ChooseGesture();
+                Console.WriteLine($"Player 2 Chose: {player2.gesture}");
+                CompareGestures();
+                CheckScore();
+                Console.WriteLine(continueGame);
+            }
+            while (continueGame == true);
 
-
+        }
+        public void CheckScore()
+        {
+            if (player1.score >= 3)
+            {
+                continueGame = false;
+                Console.WriteLine("Game Over! Player 1 wins!");
+            }
+            if (player2.score >= 3)
+            {
+                continueGame = false;
+                Console.WriteLine("Game Over! Player 2 wins!");
+            }
         }
         public void CompareGestures()
         {
-            Console.WriteLine("Comparing gesture selections...");
-            Console.WriteLine($"{player1.gesture} vs. {player2.gesture}");
+            //Console.WriteLine("Comparing gesture selections...");
+            //Console.WriteLine($"{player1.gesture} vs. {player2.gesture}");
             if ((player1.gesture == "rock") && (player2.gesture == "rock"))
             {
                 Console.WriteLine("Tie! Select Again!");
@@ -200,10 +217,13 @@ namespace RPSLS
             string numberPlayers;
             do
             {
-                Console.WriteLine("Are you playing with 1 or 2 players?");
+                Console.WriteLine("Are you playing with 0, 1 or 2 players?");
                 numberPlayers = Console.ReadLine();
                 switch (numberPlayers)
                 {
+                    case "0":
+                        isValidSelection = true;
+                        break;
                     case "1":
                         isValidSelection = true;
                         break;
@@ -233,6 +253,11 @@ namespace RPSLS
             {
                 player1 = new Human();
                 player2 = new Human();
+            }
+            else if (numberofPlayers == "0")
+            {
+                player1 = new AI();
+                player2 = new AI();
             }
 
         }
