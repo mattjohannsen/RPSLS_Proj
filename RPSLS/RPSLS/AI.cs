@@ -22,24 +22,24 @@ namespace RPSLS
             //Console.WriteLine("The computer is selecting a gesture.");
             int result;
             Random rnd = new Random();
-            result = rnd.Next(1, 5);
-            if (result == 1)
+            result = rnd.Next(0, 5);
+            if (result == 0)
             {
                 gesture = "rock";
             }
-            if (result == 2)
+            if (result == 1)
             {
                 gesture = "paper";
             }
-            if (result == 3)
+            if (result == 2)
             {
                 gesture = "scissors";
             }
-            if (result == 4)
+            if (result == 3)
             {
                 gesture = "lizzard";
             }
-            if (result == 5)
+            if (result == 4)
             {
                 gesture = "spock";
             }
