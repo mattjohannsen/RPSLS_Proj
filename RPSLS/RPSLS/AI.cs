@@ -19,7 +19,7 @@ namespace RPSLS
         // member methods
         public override void ChooseGesture()
         {
-            Console.WriteLine("This is where computers choose gesture.");
+            //Console.WriteLine("The computer is selecting a gesture.");
             int result;
             Random rnd = new Random();
             result = rnd.Next(1, 5);

@@ -32,9 +32,9 @@ namespace RPSLS
             string players = GetNumberOfPlayers();
             SetPlayers(players);
             player1.ChooseGesture();
+            Console.WriteLine($"Player 1 Chose: {player1.gesture}");
             player2.ChooseGesture();
-            Console.WriteLine($"p1: {player1.gesture}");
-            Console.WriteLine($"p2: {player2.gesture}");
+            Console.WriteLine($"Player 2 Chose: {player2.gesture}");
             //Console.WriteLine($"p2: {player2.gesture}");
             //string numberPlayers = GetNumberOfPlayers();
 
