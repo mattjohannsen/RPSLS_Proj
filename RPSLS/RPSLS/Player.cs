@@ -10,6 +10,8 @@ namespace RPSLS
     {
         //member variables
         public string name;
+        public int score;
+        public string gesture;
 
 
         //constructor

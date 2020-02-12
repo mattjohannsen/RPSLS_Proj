@@ -24,6 +24,10 @@ namespace RPSLS
 
 
         // member methods
+        public void RunGame()
+        {
+            Console.WriteLine("Rock Paper Scissors Lizzard Spock");
+        }
 
 
     }
