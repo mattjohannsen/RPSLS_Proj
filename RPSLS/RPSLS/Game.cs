@@ -11,6 +11,7 @@ namespace RPSLS
         // member variables
         public Player player1;
         public Player player2;
+
         // This is where the List<string> gestures will go
 
 
@@ -28,7 +29,9 @@ namespace RPSLS
         {
             //This is where the method will go to show the instructions
             Console.WriteLine("Rock Paper Scissors Lizzard Spock");
-            Console.WriteLine($"|{GetNumberOfPlayers()}|");
+            string players = GetNumberOfPlayers();
+            SetPlayers(players);
+
             //string numberPlayers = GetNumberOfPlayers();
 
 
@@ -65,18 +68,14 @@ namespace RPSLS
         {
             if (numberofPlayers == "1")
             {
-                //player1 = new Human();
-                //player2 = new AI();
-                //Player player1 = new Human();
-                //Player player2 = new AI();
+                player1 = new Human();
+                player2 = new AI();
 
             }
             else if (numberofPlayers == "2")
             {
-                //player1 = new Human();
-                //player2 = new Human();
-                //Player player1 = new Human();
-                //Player player2 = new Human();
+                player1 = new Human();
+                player2 = new Human();
             }
 
         }
