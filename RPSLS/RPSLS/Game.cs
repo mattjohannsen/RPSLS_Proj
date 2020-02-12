@@ -9,8 +9,8 @@ namespace RPSLS
     class Game
     {
         // member variables
-        Player player1;
-        Player player2;
+        public Player player1;
+        public Player player2;
         // This is where the List<string> gestures will go
 
 
@@ -28,27 +28,55 @@ namespace RPSLS
         {
             //This is where the method will go to show the instructions
             Console.WriteLine("Rock Paper Scissors Lizzard Spock");
+            Console.WriteLine($"|{GetNumberOfPlayers()}|");
+            //string numberPlayers = GetNumberOfPlayers();
+
 
         }
 
         private string GetNumberOfPlayers()
         {
-            Console.WriteLine("Are you playing with 1 or 2 players?");
-            string numberPlayers = Console.ReadLine();
+            bool isValidSelection = false;
+            string numberPlayers;
+            do
+            {
+                Console.WriteLine("Are you playing with 1 or 2 players?");
+                numberPlayers = Console.ReadLine();
+                switch (numberPlayers)
+                {
+                    case "1":
+                        isValidSelection = true;
+                        break;
+                    case "2":
+                        isValidSelection = true;
+                        break;
+                    default:
+                        isValidSelection = false;
+                        Console.WriteLine("That is not a valid selection. Please try again.");
+                        break;
+                }
+            }
+            while (isValidSelection == false);
             return numberPlayers;
+
         }
 
         private void SetPlayers(string numberofPlayers)
         {
             if (numberofPlayers == "1")
             {
-                player1 = new Human();
-                player2 = new AI();
+                //player1 = new Human();
+                //player2 = new AI();
+                //Player player1 = new Human();
+                //Player player2 = new AI();
+
             }
             else if (numberofPlayers == "2")
             {
-                player1 = new Human();
-                player2 = new Human();
+                //player1 = new Human();
+                //player2 = new Human();
+                //Player player1 = new Human();
+                //Player player2 = new Human();
             }
 
         }

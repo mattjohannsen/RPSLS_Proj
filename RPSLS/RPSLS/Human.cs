@@ -13,15 +13,16 @@ namespace RPSLS
 
 
         //member constructor
-        public Human(string name)
-        {
-            this.name = name;
-        }
+
 
 
 
         //member methods
-
+        public override void ChooseGesture()
+        {
+            Console.WriteLine("Choose Gesture:");
+            gesture = Console.ReadLine();
+        }
 
 
 

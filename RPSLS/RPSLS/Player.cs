@@ -19,14 +19,10 @@ namespace RPSLS
         {
 
         }
-        public Player(string name)
-        {
-            this.name = name;
-        }
 
 
         //member methods
-
+        public abstract void ChooseGesture();
 
 
 

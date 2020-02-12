@@ -17,7 +17,11 @@ namespace RPSLS
 
 
         // member methods
-
+        public override void ChooseGesture()
+        {
+            // Randomly generate a gesture
+            // gesture = Randomly generated gesture
+        }
 
 
 
