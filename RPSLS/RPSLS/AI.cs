@@ -20,10 +20,32 @@ namespace RPSLS
         public override void ChooseGesture()
         {
             Console.WriteLine("This is where computers choose gesture.");
-            // Randomly generate a gesture
-            // gesture = Randomly generated gesture
-        }
+            int result;
+            Random rnd = new Random();
+            result = rnd.Next(1, 5);
+            if (result == 1)
+            {
+                gesture = "rock";
+            }
+            if (result == 2)
+            {
+                gesture = "paper";
+            }
+            if (result == 3)
+            {
+                gesture = "scissors";
+            }
+            if (result == 4)
+            {
+                gesture = "lizzard";
+            }
+            if (result == 5)
+            {
+                gesture = "spock";
+            }
 
+
+        }
 
 
     }

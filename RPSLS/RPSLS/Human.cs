@@ -20,7 +20,7 @@ namespace RPSLS
         //member methods
         public override void ChooseGesture()
         {
-            Console.WriteLine("This is the place where humans select gesture.");
+            //Console.WriteLine("This is the place where humans select gesture.");
             bool validPlayerChoice = false;
             string playerSelection;
             do
