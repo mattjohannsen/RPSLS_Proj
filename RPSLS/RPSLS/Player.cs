@@ -12,12 +12,16 @@ namespace RPSLS
         public string name;
         public int score;
         public string gesture;
-
+        public List<string> gestures = new List<string>();
 
         //constructor
         public Player()
         {
-
+            gestures.Add("rock");
+            gestures.Add("paper");
+            gestures.Add("scissors");
+            gestures.Add("lizzard");
+            gestures.Add("spock");
         }
 
 

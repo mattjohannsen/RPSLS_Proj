@@ -23,12 +23,7 @@ namespace RPSLS
         {
             bool validPlayerChoice = false;
             string playerSelection;
-            List<string> gestures = new List<string>();
-            gestures.Add("rock");
-            gestures.Add("paper");
-            gestures.Add("scissors");
-            gestures.Add("lizzard");
-            gestures.Add("spock");
+
             Console.WriteLine();
             Console.WriteLine("Select Gesture:");
             for (int i = 0; i < gestures.Count; i++)
