@@ -9,7 +9,7 @@ namespace RPSLS
     public class Human : Player
     {
         //member variables
-        public string name;
+        //public string name;
 
 
 
@@ -28,7 +28,7 @@ namespace RPSLS
             Console.WriteLine("Select Gesture:");
             for (int i = 0; i < gestures.Count; i++)
             {
-                Console.WriteLine($"({i}) for {gestures[i]}");
+                Console.WriteLine($"({i}) for {gestures[i].gestureName}");
             }
             do
             {
@@ -37,24 +37,24 @@ namespace RPSLS
                 {
                 case "0":
                     //gesture = gestures[0];
-                    gesture = "rock";
+                    gesture = gestures[0];
                     validPlayerChoice = true;
                     break;
                 case "1":
-                    gesture = "paper";
-                    validPlayerChoice = true;
+                    gesture = gestures[1];
+                        validPlayerChoice = true;
                     break;
                 case "2":
-                     gesture = "scissors";
-                    validPlayerChoice = true;
+                     gesture = gestures[2];
+                        validPlayerChoice = true;
                     break;
                 case "3":
-                     gesture = "lizzard";
-                    validPlayerChoice = true;
+                     gesture = gestures[3];
+                        validPlayerChoice = true;
                     break;
                 case "4":
-                     gesture = "spock";
-                    validPlayerChoice = true;
+                     gesture = gestures[4];
+                        validPlayerChoice = true;
                     break;
                 default:
                     Console.WriteLine("That is not a valid selection. Please try again.");

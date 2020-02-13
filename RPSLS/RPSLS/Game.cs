@@ -13,16 +13,7 @@ namespace RPSLS
         public Player player2;
         bool continueGame = true;
 
-        // This is where the List<string> gestures will go
-
-
-
-
         // constructor
-
-
-
-
 
 
         // member methods
@@ -35,9 +26,9 @@ namespace RPSLS
             {
                 player1.ChooseGesture();
                 Console.WriteLine();
-                Console.WriteLine($"Player 1 Chose: {player1.gesture}");
+                Console.WriteLine($"Player 1 Chose: {player1.gesture.gestureName}");
                 player2.ChooseGesture();
-                Console.WriteLine($"Player 2 Chose: {player2.gesture}");
+                Console.WriteLine($"Player 2 Chose: {player2.gesture.gestureName}");
                 CompareGestures();
                 CheckScore();
             }
@@ -77,153 +68,184 @@ namespace RPSLS
                 Console.WriteLine("Game Over! Player 2 wins!");
             }
         }
+        public void GestureStringCompare()
+        {
+            Console.WriteLine();
+            //if ((player1.[0] == "rock") && (player2.gesture == "rock"))
+            //{
+            //    Console.WriteLine("Tie! Select Again!");
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+
+        }
         public void CompareGestures()
         {
-            if ((player1.gesture == "rock") && (player2.gesture == "rock"))
+            bool contains = player2.gesture.losesTo.Contains(player1.gesture.gestureName);
+            if (player1.gesture.gestureName == player2.gesture.gestureName)
             {
-                Console.WriteLine("Tie! Select Again!");
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+                Console.WriteLine("Tie");
             }
-            if ((player1.gesture == "rock") && (player2.gesture == "paper"))
+            else
             {
-                Console.WriteLine("Paper covers Rock! Player 2 Wins!");
-                player2.score ++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+                if (contains)
+                {
+                    Console.WriteLine("Player 1 Wins");
+                    player1.score++;
+
+                }
+                else
+                {
+                    Console.WriteLine("Player 2 Wins");
+                    player2.score++;
+                }
             }
-            if ((player1.gesture == "rock") && (player2.gesture == "scissors"))
-            {
-                Console.WriteLine("Rock crushes Scissors! Player 1 Wins!");
-                player1.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "rock") && (player2.gesture == "lizzard"))
-            {
-                Console.WriteLine("Rock crushes Lizard! Player 1 Wins!");
-                player1.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "rock") && (player2.gesture == "spock"))
-            {
-                Console.WriteLine("Spock vaporizes Rock! Player 2 Wins!");
-                player2.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "paper") && (player2.gesture == "rock"))
-            {
-                Console.WriteLine("Paper covers Rock! Player 1 Wins!");
-                player1.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "paper") && (player2.gesture == "paper"))
-            {
-                Console.WriteLine("Tie! Select Again!");
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "paper") && (player2.gesture == "scissors"))
-            {
-                Console.WriteLine("Scissors cuts Paper! Player 2 Wins!");
-                player2.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "paper") && (player2.gesture == "lizzard"))
-            {
-                Console.WriteLine("Lizard eats Paper! Player 2 Wins!");
-                player2.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "paper") && (player2.gesture == "spock"))
-            {
-                Console.WriteLine("Paper disproves Spock! Player 1 Wins!");
-                player1.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "scissors") && (player2.gesture == "rock"))
-            {
-                Console.WriteLine("Rock crushes Scissors! Player 2 Wins!");
-                player2.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "scissors") && (player2.gesture == "paper"))
-            {
-                Console.WriteLine("Scissors cuts Paper! Player 1 Wins!");
-                player1.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "scissors") && (player2.gesture == "scissors"))
-            {
-                Console.WriteLine("Tie! Select Again!");
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "scissors") && (player2.gesture == "lizzard"))
-            {
-                Console.WriteLine("Scissors decapitates Lizard! Player 1 Wins!");
-                player1.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "scissors") && (player2.gesture == "spock"))
-            {
-                Console.WriteLine("Spock smashes Scissors! Player 2 Wins!");
-                player2.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "lizzard") && (player2.gesture == "rock"))
-            {
-                Console.WriteLine("Rock crushes Lizard! Player 2 Wins!");
-                player2.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "lizzard") && (player2.gesture == "paper"))
-            {
-                Console.WriteLine("Lizard eats Paper! Player 1 Wins!");
-                player1.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "lizzard") && (player2.gesture == "scissors"))
-            {
-                Console.WriteLine("Scissors decapitates Lizard! Player 2 Wins!");
-                player2.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "lizzard") && (player2.gesture == "lizzard"))
-            {
-                Console.WriteLine("Tie! Select Again!");
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "lizzard") && (player2.gesture == "spock"))
-            {
-                Console.WriteLine("Lizard poisons Spock! Player 1 Wins!");
-                player1.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "spock") && (player2.gesture == "rock"))
-            {
-                Console.WriteLine("Spock vaporizes Rock! Player 1 Wins!");
-                player1.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "spock") && (player2.gesture == "paper"))
-            {
-                Console.WriteLine("Paper disproves Spock! Player 2 Wins!");
-                player2.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "spock") && (player2.gesture == "scissors"))
-            {
-                Console.WriteLine("Spock smashes Scissors! Player 1 Wins!");
-                player1.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "spock") && (player2.gesture == "lizzard"))
-            {
-                Console.WriteLine("Lizard poisons Spock! Player 2 Wins!");
-                player2.score++;
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
-            if ((player1.gesture == "spock") && (player2.gesture == "spock"))
-            {
-                Console.WriteLine("Tie! Select Again!");
-                Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
-            }
+            Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+
+            //if ((player1.gesture.gestureName == "rock") && (player2.gesture.losesTo == "rock"))
+            //{
+            //    Console.WriteLine("Tie! Select Again!");
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "rock") && (player2.gesture == "paper"))
+            //{
+            //    Console.WriteLine("Paper covers Rock! Player 2 Wins!");
+            //    player2.score ++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "rock") && (player2.gesture == "scissors"))
+            //{
+            //    Console.WriteLine("Rock crushes Scissors! Player 1 Wins!");
+            //    player1.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "rock") && (player2.gesture == "lizzard"))
+            //{
+            //    Console.WriteLine("Rock crushes Lizard! Player 1 Wins!");
+            //    player1.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "rock") && (player2.gesture == "spock"))
+            //{
+            //    Console.WriteLine("Spock vaporizes Rock! Player 2 Wins!");
+            //    player2.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "paper") && (player2.gesture == "rock"))
+            //{
+            //    Console.WriteLine("Paper covers Rock! Player 1 Wins!");
+            //    player1.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "paper") && (player2.gesture == "paper"))
+            //{
+            //    Console.WriteLine("Tie! Select Again!");
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "paper") && (player2.gesture == "scissors"))
+            //{
+            //    Console.WriteLine("Scissors cuts Paper! Player 2 Wins!");
+            //    player2.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "paper") && (player2.gesture == "lizzard"))
+            //{
+            //    Console.WriteLine("Lizard eats Paper! Player 2 Wins!");
+            //    player2.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "paper") && (player2.gesture == "spock"))
+            //{
+            //    Console.WriteLine("Paper disproves Spock! Player 1 Wins!");
+            //    player1.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "scissors") && (player2.gesture == "rock"))
+            //{
+            //    Console.WriteLine("Rock crushes Scissors! Player 2 Wins!");
+            //    player2.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "scissors") && (player2.gesture == "paper"))
+            //{
+            //    Console.WriteLine("Scissors cuts Paper! Player 1 Wins!");
+            //    player1.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "scissors") && (player2.gesture == "scissors"))
+            //{
+            //    Console.WriteLine("Tie! Select Again!");
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "scissors") && (player2.gesture == "lizzard"))
+            //{
+            //    Console.WriteLine("Scissors decapitates Lizard! Player 1 Wins!");
+            //    player1.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "scissors") && (player2.gesture == "spock"))
+            //{
+            //    Console.WriteLine("Spock smashes Scissors! Player 2 Wins!");
+            //    player2.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "lizzard") && (player2.gesture == "rock"))
+            //{
+            //    Console.WriteLine("Rock crushes Lizard! Player 2 Wins!");
+            //    player2.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "lizzard") && (player2.gesture == "paper"))
+            //{
+            //    Console.WriteLine("Lizard eats Paper! Player 1 Wins!");
+            //    player1.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "lizzard") && (player2.gesture == "scissors"))
+            //{
+            //    Console.WriteLine("Scissors decapitates Lizard! Player 2 Wins!");
+            //    player2.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "lizzard") && (player2.gesture == "lizzard"))
+            //{
+            //    Console.WriteLine("Tie! Select Again!");
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "lizzard") && (player2.gesture == "spock"))
+            //{
+            //    Console.WriteLine("Lizard poisons Spock! Player 1 Wins!");
+            //    player1.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "spock") && (player2.gesture == "rock"))
+            //{
+            //    Console.WriteLine("Spock vaporizes Rock! Player 1 Wins!");
+            //    player1.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "spock") && (player2.gesture == "paper"))
+            //{
+            //    Console.WriteLine("Paper disproves Spock! Player 2 Wins!");
+            //    player2.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "spock") && (player2.gesture == "scissors"))
+            //{
+            //    Console.WriteLine("Spock smashes Scissors! Player 1 Wins!");
+            //    player1.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "spock") && (player2.gesture == "lizzard"))
+            //{
+            //    Console.WriteLine("Lizard poisons Spock! Player 2 Wins!");
+            //    player2.score++;
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
+            //if ((player1.gesture == "spock") && (player2.gesture == "spock"))
+            //{
+            //    Console.WriteLine("Tie! Select Again!");
+            //    Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
+            //}
         }
         
         

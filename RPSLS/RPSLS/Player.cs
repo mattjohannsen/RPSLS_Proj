@@ -11,17 +11,33 @@ namespace RPSLS
         //member variables
         public string name;
         public int score;
-        public string gesture;
-        public List<string> gestures = new List<string>();
+        public Gesture gesture;
+        //OLD working simple list below
+        //public List<string> gestures = new List<string>();
+        //OLD working simple list above
+        //New variables from Gesture class below
+        //public string gestureName;
+        public List<Gesture> gestures;
+        //New variables from Gesture class above
 
         //constructor
         public Player()
         {
-            gestures.Add("rock");
-            gestures.Add("paper");
-            gestures.Add("scissors");
-            gestures.Add("lizzard");
-            gestures.Add("spock");
+
+            Gesture rock = new Gesture("rock", new List<string> { "paper", "spock" });
+            Gesture paper = new Gesture("paper", new List<string> { "scissors", "lizzard" });
+            Gesture scissors = new Gesture("scissors", new List<string> { "rock", "spock" });
+            Gesture lizzard = new Gesture("lizzard", new List<string> { "rock", "scissors" });
+            Gesture spock = new Gesture("spock", new List<string> { "paper", "lizzard" });
+
+            gestures = new List<Gesture>() { rock, paper, scissors, lizzard, spock };
+            //OLD working simple list below
+            //gestures.Add("rock");
+            //gestures.Add("paper");
+            //gestures.Add("scissors");
+            //gestures.Add("lizzard");
+            //gestures.Add("spock");
+            //OLD working simple list above
         }
 
 
