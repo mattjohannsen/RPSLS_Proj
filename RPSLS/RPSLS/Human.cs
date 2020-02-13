@@ -25,6 +25,7 @@ namespace RPSLS
             string playerSelection;
             do
             {
+                Console.WriteLine();
                 Console.WriteLine("Select Gesture:");
                 Console.WriteLine("(1) for Rock");
                 Console.WriteLine("(2) for Paper");

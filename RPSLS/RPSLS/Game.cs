@@ -12,6 +12,7 @@ namespace RPSLS
         public Player player1;
         public Player player2;
         bool continueGame = true;
+
         // This is where the List<string> gestures will go
 
 
@@ -35,12 +36,13 @@ namespace RPSLS
             do
             {
                 player1.ChooseGesture();
+                Console.WriteLine();
                 Console.WriteLine($"Player 1 Chose: {player1.gesture}");
                 player2.ChooseGesture();
                 Console.WriteLine($"Player 2 Chose: {player2.gesture}");
                 CompareGestures();
                 CheckScore();
-                Console.WriteLine(continueGame);
+                //Console.WriteLine(continueGame);
             }
             while (continueGame == true);
 
@@ -50,11 +52,13 @@ namespace RPSLS
             if (player1.score >= 3)
             {
                 continueGame = false;
+                Console.WriteLine("");
                 Console.WriteLine("Game Over! Player 1 wins!");
             }
             if (player2.score >= 3)
             {
                 continueGame = false;
+                Console.WriteLine("");
                 Console.WriteLine("Game Over! Player 2 wins!");
             }
         }
@@ -114,7 +118,7 @@ namespace RPSLS
                 player2.score++;
                 Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
             }
-            if ((player1.gesture == "paper") && (player1.gesture == "spock"))
+            if ((player1.gesture == "paper") && (player2.gesture == "spock"))
             {
                 Console.WriteLine("Paper disproves Spock! Player 1 Wins!");
                 player1.score++;
@@ -202,7 +206,7 @@ namespace RPSLS
                 player2.score++;
                 Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
             }
-            if ((player1.gesture == "spock") && (player1.gesture == "spock"))
+            if ((player1.gesture == "spock") && (player2.gesture == "spock"))
             {
                 Console.WriteLine("Tie! Select Again!");
                 Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
