@@ -12,6 +12,7 @@ namespace RPSLS
         public string name;
 
 
+
         //member constructor
 
 
@@ -20,38 +21,50 @@ namespace RPSLS
         //member methods
         public override void ChooseGesture()
         {
-            //Console.WriteLine("This is the place where humans select gesture.");
             bool validPlayerChoice = false;
             string playerSelection;
-            do
+            //List<Gesture> gestures = new List<Gesture>();
+            //Gesture rock = new Gesture("rock");
+            //Gesture paper = new Gesture("paper");
+            //Gesture scissors = new Gesture("scissors");
+            //Gesture lizzard = new Gesture("lizzard");
+            //Gesture spock = new Gesture("spock");
+            //gestures = new List<Gesture>() { rock, paper, scissors, lizzard, spock };
+            List<string> gestures = new List<string>();
+            gestures.Add("rock");
+            gestures.Add("paper");
+            gestures.Add("scissors");
+            gestures.Add("lizzard");
+            gestures.Add("spock");
+            Console.WriteLine();
+            Console.WriteLine("Select Gesture:");
+            //Console.WriteLine($"{gestures.Count}");
+            for (int i = 0; i < gestures.Count; i++)
             {
-                Console.WriteLine();
-                Console.WriteLine("Select Gesture:");
-                Console.WriteLine("(1) for Rock");
-                Console.WriteLine("(2) for Paper");
-                Console.WriteLine("(3) for Scissors");
-                Console.WriteLine("(4) for Lizzard");
-                Console.WriteLine("(5) for Spock");
+                Console.WriteLine($"({i}) for {gestures[i]}");
+            }
+
+            {
                 playerSelection = Console.ReadLine();
                 switch (playerSelection)
                 {
-                case "1":
+                case "0":
                     gesture = "rock";
                     validPlayerChoice = true;
                     break;
-                case "2":
+                case "1":
                     gesture = "paper";
                     validPlayerChoice = true;
                     break;
-                case "3":
+                case "2":
                      gesture = "scissors";
                     validPlayerChoice = true;
                     break;
-                case "4":
+                case "3":
                      gesture = "lizzard";
                     validPlayerChoice = true;
                     break;
-                case "5":
+                case "4":
                      gesture = "spock";
                     validPlayerChoice = true;
                     break;
@@ -63,12 +76,6 @@ namespace RPSLS
 
             }
             while (validPlayerChoice == false);
-            //Console.WriteLine("Choose Gesture:");
-            //gesture = Console.ReadLine();
         }
-
-
-
-
     }
 }

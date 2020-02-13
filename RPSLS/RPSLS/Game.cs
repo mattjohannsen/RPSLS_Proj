@@ -29,10 +29,9 @@ namespace RPSLS
         public void RunGame()
         {
             //This is where the method will go to show the instructions
-            Console.WriteLine("Rock Paper Scissors Lizzard Spock");
+            ShowGameRule();
             string players = GetNumberOfPlayers();
             SetPlayers(players);
-            //bool continueGame = true;
             do
             {
                 player1.ChooseGesture();
@@ -47,6 +46,24 @@ namespace RPSLS
             while (continueGame == true);
 
         }
+        public void ShowGameRule()
+        {
+            Console.WriteLine("Welcome to the game: Rock, Paper, Scissors, Lizzard, Spock!");
+            Console.WriteLine("Here are the rules:");
+            Console.WriteLine("Rock crushes Scissors ");
+            Console.WriteLine("Scissors cuts Paper");
+            Console.WriteLine("Paper covers Rock");
+            Console.WriteLine("Rock crushes Lizard");
+            Console.WriteLine("Lizard poisons Spock");
+            Console.WriteLine("Spock smashes Scissors");
+            Console.WriteLine("Scissors decapitates Lizard");
+            Console.WriteLine("Lizard eats Paper");
+            Console.WriteLine("Paper disproves Spock");
+            Console.WriteLine("Spock vaporizes Rock");
+            Console.WriteLine();
+        }
+
+
         public void CheckScore()
         {
             if (player1.score >= 3)
