@@ -9,14 +9,8 @@ namespace RPSLS
     public class Human : Player
     {
         //member variables
-        //public string name;
-
-
 
         //member constructor
-
-
-
 
         //member methods
         public override void ChooseGesture()
@@ -36,7 +30,6 @@ namespace RPSLS
                 switch (playerSelection)
                 {
                 case "0":
-                    //gesture = gestures[0];
                     gesture = gestures[0];
                     validPlayerChoice = true;
                     break;

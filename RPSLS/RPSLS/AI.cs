@@ -10,11 +10,7 @@ namespace RPSLS
     {
         // member variables
 
-
-
         // constructor
-
-
 
         // member methods
         public override void ChooseGesture()
@@ -30,7 +26,5 @@ namespace RPSLS
                 }
             }
         }
-
-
     }
 }
