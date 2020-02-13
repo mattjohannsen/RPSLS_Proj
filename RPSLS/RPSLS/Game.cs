@@ -28,8 +28,7 @@ namespace RPSLS
         // member methods
         public void RunGame()
         {
-            //This is where the method will go to show the instructions
-            ShowGameRule();
+            ShowGameRules();
             string players = GetNumberOfPlayers();
             SetPlayers(players);
             do
@@ -41,12 +40,11 @@ namespace RPSLS
                 Console.WriteLine($"Player 2 Chose: {player2.gesture}");
                 CompareGestures();
                 CheckScore();
-                //Console.WriteLine(continueGame);
             }
             while (continueGame == true);
 
         }
-        public void ShowGameRule()
+        public void ShowGameRules()
         {
             Console.WriteLine("Welcome to the game: Rock, Paper, Scissors, Lizzard, Spock!");
             Console.WriteLine("Here are the rules:");
@@ -81,8 +79,6 @@ namespace RPSLS
         }
         public void CompareGestures()
         {
-            //Console.WriteLine("Comparing gesture selections...");
-            //Console.WriteLine($"{player1.gesture} vs. {player2.gesture}");
             if ((player1.gesture == "rock") && (player2.gesture == "rock"))
             {
                 Console.WriteLine("Tie! Select Again!");

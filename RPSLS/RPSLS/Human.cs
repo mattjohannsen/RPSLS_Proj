@@ -23,13 +23,6 @@ namespace RPSLS
         {
             bool validPlayerChoice = false;
             string playerSelection;
-            //List<Gesture> gestures = new List<Gesture>();
-            //Gesture rock = new Gesture("rock");
-            //Gesture paper = new Gesture("paper");
-            //Gesture scissors = new Gesture("scissors");
-            //Gesture lizzard = new Gesture("lizzard");
-            //Gesture spock = new Gesture("spock");
-            //gestures = new List<Gesture>() { rock, paper, scissors, lizzard, spock };
             List<string> gestures = new List<string>();
             gestures.Add("rock");
             gestures.Add("paper");
@@ -38,17 +31,17 @@ namespace RPSLS
             gestures.Add("spock");
             Console.WriteLine();
             Console.WriteLine("Select Gesture:");
-            //Console.WriteLine($"{gestures.Count}");
             for (int i = 0; i < gestures.Count; i++)
             {
                 Console.WriteLine($"({i}) for {gestures[i]}");
             }
-
+            do
             {
                 playerSelection = Console.ReadLine();
                 switch (playerSelection)
                 {
                 case "0":
+                    //gesture = gestures[0];
                     gesture = "rock";
                     validPlayerChoice = true;
                     break;
@@ -73,7 +66,6 @@ namespace RPSLS
                     validPlayerChoice = false;
                     break;
                 }
-
             }
             while (validPlayerChoice == false);
         }
