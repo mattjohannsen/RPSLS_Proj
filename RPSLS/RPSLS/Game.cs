@@ -92,6 +92,22 @@ namespace RPSLS
             }
             Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
         }
+        //private string GetNumberOfPlayers()
+        //{
+        //        Console.WriteLine("Are you playing with 0, 1 or 2 players?");
+        //        string numberPlayers = Console.ReadLine();
+        //        switch (numberPlayers)
+        //        {
+        //            case "0":
+        //            case "1":
+        //            case "2":
+        //                return numberPlayers;
+        //            default:
+        //                Console.WriteLine("That is not a valid selection. Please try again.");
+        //                return GetNumberOfPlayers();
+        //        }
+        //    }
+        //}
 
         private string GetNumberOfPlayers()
         {
