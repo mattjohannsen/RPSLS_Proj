@@ -22,7 +22,8 @@ namespace RPSLS
             {
                 if (result == i)
                 {
-                    gesture = new Gesture(gestures[i].gestureName, gestures[i].losesTo);
+                    //gesture = new Gesture(gestures[i].gestureName, gestures[i].losesTo);
+                    gesture = gestures[i];
                 }
             }
         }

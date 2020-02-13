@@ -92,9 +92,7 @@ namespace RPSLS
             }
             Console.WriteLine($"Score p1: {player1.score} p2: {player2.score}");
         }
-        
-        
-        
+
         private string GetNumberOfPlayers()
         {
             bool isValidSelection = false;
