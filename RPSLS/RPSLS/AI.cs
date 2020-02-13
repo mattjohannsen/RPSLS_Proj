@@ -21,30 +21,14 @@ namespace RPSLS
         {
             int result;
             Random rnd = new Random();
-            result = rnd.Next(0, 5);
-
-            if (result == 0)
+            result = rnd.Next(0, gestures.Count);
+            for (int i = 0; i < gestures.Count; i++)
             {
-                gesture = "rock";
+                if (result == i)
+                {
+                    gesture = gestures[i];
+                }
             }
-            if (result == 1)
-            {
-                gesture = "paper";
-            }
-            if (result == 2)
-            {
-                gesture = "scissors";
-            }
-            if (result == 3)
-            {
-                gesture = "lizzard";
-            }
-            if (result == 4)
-            {
-                gesture = "spock";
-            }
-
-
         }
 
 
